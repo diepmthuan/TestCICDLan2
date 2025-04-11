@@ -4,7 +4,6 @@
   <artifactId>Lab8_SOF3041</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Lab8_SOF3041</name>
-
   <dependencies>
 	  <dependency>
 		    <groupId>org.testng</groupId>
