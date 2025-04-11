@@ -1,0 +1,40 @@
+# 👉 Tên của workflow, sẽ hiển thị trong tab "Actions" của GitHub
+name: Java Test
+
+# 👉 Khi nào workflow này sẽ được chạy
+on:
+  # 👉 Chạy khi có Pull Request mở hoặc cập nhật vào nhánh main
+  pull_request:
+    branches:
+      - main
+  # 👉 Chạy khi có code được đẩy (push) vào nhánh main
+  push:
+    branches:
+      - main
+
+# 👉 Khai báo các job sẽ thực hiện (có thể có nhiều job)
+jobs:
+  build:
+    # 👉 Tên hiển thị của job này
+    name: Test on Windows
+    # 👉 Job này sẽ chạy trên hệ điều hành Windows mới nhất
+    runs-on: windows-latest
+
+    # 👉 Các bước (steps) thực hiện trong job
+    steps:
+      # 👉 Bước 1: Checkout mã nguồn từ GitHub repo
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # 👉 Bước 2: Cài đặt Java (JDK) để build và chạy test
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          # 👉 Chọn nhà cung cấp JDK là Temurin (Eclipse Adoptium)
+          distribution: 'temurin'
+          # 👉 Phiên bản Java cần dùng là Java 17
+          java-version: '17'
+
+      # 👉 Bước 3: Dùng Maven để build và chạy test (nếu có)
+      - name: Build and test on windows
+        run: mvn clean verify

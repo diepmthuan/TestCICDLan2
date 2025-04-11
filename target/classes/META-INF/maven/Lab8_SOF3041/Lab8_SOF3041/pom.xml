@@ -4,4 +4,17 @@
   <artifactId>Lab8_SOF3041</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Lab8_SOF3041</name>
+  <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+  <dependencies>
+	  <dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>7.11.0</version>
+		    <scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
