@@ -33,7 +33,7 @@ jobs:
           # 👉 Chọn nhà cung cấp JDK là Temurin (Eclipse Adoptium)
           distribution: 'temurin'
           # 👉 Phiên bản Java cần dùng là Java 17
-          java-version: '17'
+          java-version: '22'
 
       # 👉 Bước 3: Dùng Maven để build và chạy test (nếu có)
       - name: Build and test on windows
